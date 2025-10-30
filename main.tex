@@ -1,0 +1,139 @@
+% Created by Jonas Kirch (Tohoku University), inspired by Susanne Dandl, Ludwig Bothmann (LMU Munich): https://www.overleaf.com/latex/templates/lmu-slds-slides-template/bkwnfcvbqwkc
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass[aspectratio=169]{beamer}
+\mode<presentation> {
+	
+	\usetheme{Boadilla}
+}
+\definecolor{tupurple}{RGB}{62, 21, 134}
+\usecolortheme[named=tupurple]{structure}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb} % math symbols
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref} % for URLs
+\newcommand{\gray}{\rowcolor[gray]{.90}}
+\usepackage{verbatim}
+\usepackage{textpos} % logo position
+
+\usepackage{cases} % math cases
+
+% Caption
+\usepackage{caption}
+\DeclareCaptionFont{tiny}{\tiny}
+\captionsetup{font=scriptsize,labelfont=scriptsize,justification=centering}
+
+% ToC
+\AtBeginSection[]{
+	\begin{frame}[noframenumbering, plain]
+	\frametitle{Outline}
+	\setcounter{tocdepth}{1}
+	\tableofcontents[currentsection]
+\end{frame}
+}
+
+% Remove navigation 
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usefonttheme{professionalfonts}
+
+% R 
+\usepackage{listings}
+\lstset{
+language=R,
+basicstyle=\scriptsize\ttfamily,
+commentstyle=\ttfamily\color{gray},
+backgroundcolor=\color{white},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+tabsize=2,
+captionpos=b,
+breaklines=false,
+breakatwhitespace=false,
+title=\lstname,
+escapeinside={},
+keywordstyle={},
+morekeywords={}, 
+belowskip = -1.2 \baselineskip,
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% Preset with Clean Header
+% \addtobeamertemplate{frametitle}{}{%
+% 	\begin{textblock*}{100mm}(0.95\textwidth,-0.5cm)
+% 		\includegraphics[height=1cm,width=0.97cm]{tohoku_uni_logo.png}
+% \end{textblock*}
+% }
+
+% Preset with Fancy Header
+\setbeamercolor{frametitle}{fg=white} 
+\setbeamertemplate{frametitle}{
+    \vspace{0.15cm}
+    \hspace{0.85cm}
+    \insertframetitle
+}
+\addtobeamertemplate{frametitle}{%
+    \begin{textblock*}{\paperwidth}(-0.35cm,-0.05cm) % full width at top
+        \includegraphics[width=\paperwidth]{header.pdf}
+    \end{textblock*}
+}{}
+
+
+%\includegraphics[width=0.3\textwidth]{tohoku_uni_logo.pdf}
+\vspace*{-1cm}
+
+\title{Title} 
+
+\author{Your Name} 
+\institute[Tohoku University]{Tohoku University} % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+
+\begin{document}
+
+% Adjust (x,y) according to Title/Subtitle Size
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{background.pdf}}
+\begin{frame}
+
+\begin{textblock*}{12cm}(0cm,-0.5cm) % width and (x,y) from top-left
+    \textcolor{tupurple}{\Large Title} \\[0.5cm]
+    \textcolor{black}{Subtitle or Description}\\[2cm]
+    \textcolor{black}{\footnotesize Author Name \\ \today}
+\end{textblock*}
+\end{frame}
+}
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+
+\section{Topic I}
+
+\begin{frame}{Title}
+
+Example citation \cite{bischl2015}
+
+\end{frame}
+
+
+\begin{frame}[allowframebreaks]
+        \frametitle{References}
+        \bibliographystyle{plain}
+        \bibliography{literature.bib}
+\end{frame}
+
+\end{document}
+
+
